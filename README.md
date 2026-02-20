@@ -19,10 +19,27 @@
             to { opacity: 1; transform: translateY(0); }
         }
         
-        /* 커스텀 스크롤바 */
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+        /* 커스텀 스크롤바 개선: 시인성 확보 */
+        #chat-display::-webkit-scrollbar { 
+            width: 10px; 
+        }
+        #chat-display::-webkit-scrollbar-track { 
+            background: #f1f5f9; 
+            border-radius: 10px;
+        }
+        #chat-display::-webkit-scrollbar-thumb { 
+            background: #818cf8; /* 인디고 계열로 변경하여 잘 보이게 설정 */
+            border-radius: 10px;
+            border: 2px solid #f1f5f9;
+        }
+        #chat-display::-webkit-scrollbar-thumb:hover { 
+            background: #4f46e5; /* 마우스 올렸을 때 진하게 */
+        }
+        
+        /* 부드러운 스크롤 */
+        #chat-display {
+            scroll-behavior: smooth;
+        }
     </style>
 </head>
 <body class="h-screen flex flex-col overflow-hidden">
